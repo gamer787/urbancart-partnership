@@ -16,7 +16,9 @@ GitHub Actions publishes the `dist/` folder to GitHub Pages whenever `main` is p
 
 Target domain: https://urbancart.lotusflowai.com
 
-DNS in GoDaddy: `CNAME` named `urbancart`, pointing to `gamer787.github.io`.
+The domain is registered with GoDaddy; its DNS is managed by Cloudflare.
+DNS in Cloudflare: `CNAME` named `urbancart`, pointing to `gamer787.github.io`
+(DNS only, without proxying).
 The custom domain must also be set in this repository's GitHub Pages settings.
 
 This folder is the source checkout. Commit and push edits from this folder to update the live site.
