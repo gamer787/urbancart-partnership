@@ -1,0 +1,11 @@
+{
+  "name": "chargehive-urbancart-partnership",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ChargeHive EV × UrbanCart Mobility partnership proposal",
+  "scripts": {
+    "start": "node serve.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check app.js && node --check content.js && node --check serve.mjs && node --check scripts/build.mjs"
+  }
+}

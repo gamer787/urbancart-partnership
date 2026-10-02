@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ChargeHive EV × UrbanCart Mobility</title>
+<meta name="description" content="A partnership proposal from ChargeHive EV to UrbanCart Mobility: Emergency Roadside Assistance and a hyperlocal Marketplace.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#050912">
+<link rel="icon" href="assets/logo-hero.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<script>
+/* Runs before first paint. Decides whether the intro plays so the page never flashes
+   before the overlay, and arms two failsafes so a script error can never trap the page. */
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js');
+  try {
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && !/[?&]nointro\b/.test(location.search)) {
+      d.classList.add('intro-pending');
+      setTimeout(function () { d.classList.remove('intro-pending'); }, 12000);
+    }
+  } catch (e) {}
+  setTimeout(function () { if (!window.__ucReady) d.classList.add('reveal-fail'); }, 4000);
+})();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="field" aria-hidden="true"></canvas>
+
+<div id="intro" class="intro" role="dialog" aria-label="Intro animation">
+  <div class="intro-bg"></div>
+  <div class="intro-stage"></div>
+  <button type="button" class="intro-skip" id="intro-skip">Skip</button>
+</div>
+
+<nav class="charge-line" id="charge-line" aria-label="Sections">
+  <span class="cl-track"><span class="cl-fill"></span></span>
+  <a class="cl-dot" href="#top"><span>Top</span></a>
+  <a class="cl-dot" href="#summary"><span>Summary</span></a>
+  <a class="cl-dot" href="#documents"><span>Documents</span></a>
+  <a class="cl-dot" href="#recap"><span>Recap</span></a>
+</nav>
+
+<noscript><p class="noscript">This proposal page needs JavaScript. Please enable it and reload.</p></noscript>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div class="hero-lockup" id="hero-lockup"></div>
+      <h1 class="hero-title" data-words data-c="hero.headline"></h1>
+      <p class="hero-sub" data-reveal data-c="hero.sub"></p>
+      <div class="hero-cta" data-reveal style="--i:2">
+        <a class="btn btn-primary" href="#summary" data-c="hero.ctaSummary"></a>
+        <a class="btn btn-ghost" href="#documents" data-c="hero.ctaDocs"></a>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#summary" aria-label="Scroll to the summary"><i></i></a>
+  </section>
+
+  <section class="section" id="summary">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow" data-reveal><span data-c="summary.eyebrow"></span><em class="draft" id="draft-chip" hidden>Draft copy</em></p>
+        <h2 data-words data-c="summary.title"></h2>
+        <p class="lead" data-reveal data-c="summary.lead"></p>
+      </header>
+      <div class="tracks" id="tracks" data-stagger></div>
+    </div>
+  </section>
+
+  <section class="section" id="documents">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow" data-reveal data-c="documents.eyebrow"></p>
+        <h2 data-words data-c="documents.title"></h2>
+        <p class="lead" data-reveal data-c="documents.lead"></p>
+      </header>
+      <div class="docs-grid" id="docs-grid"></div>
+      <div class="docs-dots" id="docs-dots" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="section" id="recap">
+    <div class="wrap recap">
+      <header class="section-head">
+        <p class="eyebrow" data-reveal data-c="closing.eyebrow"></p>
+        <h2 data-words data-c="closing.title"></h2>
+      </header>
+      <dl class="recap-lines" id="recap-lines" data-stagger></dl>
+      <div class="recap-cta" data-reveal><a class="btn btn-primary" id="contact-cta" href="#"></a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand"><img src="assets/logo-hero.png" alt="" width="28" height="28"><span data-c="partner.a"></span></div>
+    <p class="footer-note"><span data-c="footer.prepared"></span> · <span data-c="footer.note"></span></p>
+    <button type="button" class="link-btn" id="replay" data-c="footer.replay"></button>
+  </div>
+</footer>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
